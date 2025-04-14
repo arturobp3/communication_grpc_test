@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicio-a
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: servicio-a
+  template:
+    metadata:
+      labels:
+        app: servicio-a
+    spec:
+      containers:
+      - name: servicio-a
+        image: servicio-a:latest
+        imagePullPolicy: Never  # Muy importante para que use la imagen local de Minikube
+        ports:
+        - containerPort: 50051
