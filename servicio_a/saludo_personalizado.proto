@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package saludo_personalizado;
+
+service SaludadorPersonalizado {
+  rpc SaludoCompleto (SaludoCompletoRequest) returns (SaludoCompletoReply);
+}
+
+message SaludoCompletoRequest {
+  string nombre = 1;
+}
+
+message SaludoCompletoReply {
+  string mensaje = 1;
+}
