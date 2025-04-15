@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: servicio-a
+  name: servicio-b
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: servicio-a
+      app: servicio-b
   template:
     metadata:
       labels:
-        app: servicio-a
+        app: servicio-b
     spec:
       containers:
-      - name: servicio-a
-        image: servicio-a:latest
+      - name: servicio-b
+        image: servicio-b:latest
         imagePullPolicy: Never
         ports:
-        - containerPort: 50053
+        - containerPort: 50052
